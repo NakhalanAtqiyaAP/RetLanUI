@@ -1,0 +1,481 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+/* === THEME VARIABLES === */
+:root {
+  --retro-bg: #ffffff;
+  --retro-bg-dark: #15181f;
+  --retro-border: #333;
+  --retro-accent: #61dafb;
+  --retro-shadow: #000;
+  --retro-text: #000000;
+  --grid-color: rgba(255, 255, 255, 0.05);
+  --bg-color: #fff;
+}
+
+/* === BASE RESET === */
+body {
+  background-color: var(--retro-bg);
+  color: var(--retro-text);
+  font-family:monospace;
+  font-size: 12px;
+  margin: 0;
+  padding: 0;
+  line-height: 1.4;
+}
+
+/* === FONT === */
+.pixel-font {
+  font-family: 'Press Start 2P' !important;
+  color: inherit; 
+}
+
+/* === BUTTON === */
+.btn {
+  display: inline-block;
+  border: 2px solid var(--retro-border);
+  box-shadow: 2px 2px 0 var(--retro-shadow);
+  padding: 8px 16px;
+  font-size: inherit; 
+  font-family: inherit;
+  color: inherit var(--bg-color);
+  background: inherit;
+  cursor: pointer;
+  transition: all 0.1s ease;
+}
+
+.btn:hover {
+  filter: brightness(1.1);
+}
+
+.btn:active {
+  box-shadow: none;
+  transform: translate(2px, 2px);
+}
+
+/* === CARD === */
+.card {
+  border: 2px solid var(--retro-border);
+  box-shadow: 4px 4px 0 var(--retro-shadow);
+  padding: 16px;
+  transition: transform 0.1s ease;
+  background: inherit var(--bg-color);
+  color: inherit;
+  font-family: inherit;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+/* === INPUT === */
+.input {
+  border: 2px solid var(--retro-border);
+  background: transparent;
+  color: inherit;
+  padding: 8px 12px;
+  font-size: inherit;
+  font-family: inherit;
+  box-shadow: 2px 2px 0 var(--retro-shadow);
+  outline: none;
+}
+
+.input:focus {
+  border-color: var(--retro-accent);
+}
+
+.input::placeholder {
+  color: #aaa;
+}
+
+/* === LINK === */
+.link {
+  text-decoration: underline dotted;
+  color: var(--retro-accent);
+  transition: color 0.2s ease;
+}
+
+.link:hover {
+  color: var(--retro-text);
+}
+
+
+
+/* === MODAL === */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+}
+
+.modal {
+  background: var(--retro-bg);
+  border: 2px solid var(--retro-border);
+  box-shadow: 4px 4px 0 var(--retro-shadow);
+  padding: 24px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  color: var(--retro-text);
+}
+
+/* === BACKGROUND GRID === */
+.bg-grid {
+  background-image:
+    linear-gradient(to right, var(--grid-color) 2px, transparent 2px),
+    linear-gradient(to bottom, var(--grid-color) 2px, transparent 2px);
+  background-size: 24px 24px;
+}
+/* === IMAGE STYLE === */
+.img {
+  display: block;
+  image-rendering: pixelated;
+  border: none;
+  outline: none;
+  max-width: 100%;
+  height: auto;
+  transition: transform 0.1s ease, filter 0.2s ease;
+  background: transparent;
+}
+
+/* === BORDER & SHADOW VARIANTS === */
+.img-bordered {
+  border: 2px solid var(--retro-border);
+  box-shadow: 3px 3px 0 var(--retro-shadow);
+}
+
+.img-shadow {
+  box-shadow: 4px 4px 0 var(--retro-shadow);
+}
+
+.img-hover:hover {
+  transform: translateY(-4px);
+  filter: brightness(1.1);
+}
+
+/* === SHAPE VARIANTS === */
+.img-square {
+  border-radius: 0;
+}
+
+.img-round {
+  border-radius: 50%;
+}
+
+.img-rounded {
+  border-radius: 12px;
+}
+
+/* === SIZE VARIANTS === */
+.img-sm {
+  width: 64px;
+  height: 64px;
+}
+
+.img-md {
+  width: 128px;
+  height: 128px;
+}
+
+.img-lg {
+  width: 256px;
+  height: 256px;
+}
+
+/* === COLOR FILTER UTILITIES === */
+.img-filter-green {
+  filter: hue-rotate(90deg);
+}
+
+.img-filter-blue {
+  filter: hue-rotate(180deg);
+}
+
+.img-filter-red {
+  filter: hue-rotate(-90deg);
+}
+
+.img-grayscale {
+  filter: grayscale(100%);
+}
+
+.img-sepia {
+  filter: sepia(80%);
+}
+
+/* === FRAME STYLE === */
+.img-frame {
+  padding: 4px;
+  border: 3px solid var(--retro-border);
+  background-color: var(--retro-bg-dark);
+  box-shadow: 4px 4px 0 var(--retro-shadow);
+}
+
+/* === AVATAR COMPONENT === */
+.avatar {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 2px solid var(--retro-border);
+  box-shadow: 3px 3px 0 var(--retro-shadow);
+  background-color: var(--retro-bg-dark);
+  color: var(--retro-text);
+  image-rendering: pixelated;
+  transition: transform 0.1s ease, filter 0.2s ease;
+  font-family: 'Press Start 2P', monospace;
+}
+
+/* === AVATAR SIZES === */
+.avatar-sm {
+  width: 32px;
+  height: 32px;
+  font-size: 8px;
+}
+
+.avatar-md {
+  width: 64px;
+  height: 64px;
+  font-size: 10px;
+}
+
+.avatar-lg {
+  width: 96px;
+  height: 96px;
+  font-size: 12px;
+}
+
+/* === AVATAR SHAPES === */
+.avatar-square {
+  border-radius: 0;
+}
+
+.avatar-rounded {
+  border-radius: 8px;
+}
+
+.avatar-circle {
+  border-radius: 50%;
+}
+
+/* === HOVER EFFECT === */
+.avatar:hover {
+  filter: brightness(1.1);
+  transform: translateY(-2px);
+}
+
+/* === AVATAR GROUP === */
+.avatar-group {
+  display: flex;
+  align-items: center;
+}
+
+.avatar-group .avatar {
+  margin-left: -8px;
+  border-color: var(--retro-bg);
+  transition: all 0.2s ease;
+}
+
+.avatar-group .avatar:hover {
+  transform: scale(1.05);
+  z-index: 2;
+}
+
+/* === ONLINE / OFFLINE INDICATORS === */
+.avatar-online::after,
+.avatar-offline::after {
+  content: "";
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  width: 10px;
+  height: 10px;
+  border: 2px solid var(--retro-border);
+  box-shadow: 2px 2px 0 var(--retro-shadow);
+  border-radius: 50%;
+}
+
+.avatar-online::after {
+  background-color: #4ade80; /* green */
+}
+
+.avatar-offline::after {
+  background-color: #9ca3af; /* gray */
+}
+
+/* === PLACEHOLDER AVATAR === */
+.avatar-placeholder {
+  background-color: var(--retro-bg-dark);
+  color: var(--retro-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+}
+
+/* === RETRO TABLE === */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 10px;
+  color: var(--retro-text);
+  background-color: var(--retro-bg);
+  box-shadow: 4px 4px 0 var(--retro-shadow);
+  border: 2px solid var(--retro-border);
+  text-align: left;
+  overflow: hidden;
+}
+
+/* === HEADER === */
+.table thead {
+  background-color: var(--retro-bg-dark);
+  border-bottom: 2px solid var(--retro-border);
+}
+
+.table th {
+  padding: 8px;
+  border-right: 2px solid var(--retro-border);
+  text-transform: uppercase;
+  color: var(--retro-accent);
+  letter-spacing: 1px;
+}
+
+/* === BODY === */
+.table td {
+  padding: 8px;
+  border-right: 2px solid var(--retro-border);
+  border-bottom: 2px solid var(--retro-border);
+}
+
+/* === HOVER EFFECT === */
+.table tbody tr:hover {
+  background-color: rgba(97, 218, 251, 0.1);
+  transition: background-color 0.1s ease;
+}
+
+/* === ALIGNMENT UTILITIES === */
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+/* === TABLE SIZES === */
+.table-sm td, .table-sm th {
+  padding: 4px 6px;
+  font-size: 8px;
+}
+
+.table-lg td, .table-lg th {
+  padding: 12px 14px;
+  font-size: 12px;
+}
+
+/* === STRIPED MODE === */
+.table-striped tbody tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* === BORDERED MODE === */
+.table-bordered,
+.table-bordered td,
+.table-bordered th {
+  border: 2px solid var(--retro-border);
+}
+
+/* === GRID MODE (extra) === */
+.table-grid td {
+  border: 2px dashed var(--retro-border);
+}
+
+/* === COLOR THEMES === */
+.table-blue th {
+  background-color: rgba(97, 218, 251, 0.15);
+  color: #61dafb;
+}
+
+.table-green th {
+  background-color: rgba(74, 222, 128, 0.15);
+  color: #4ade80;
+}
+
+.table-red th {
+  background-color: rgba(248, 113, 113, 0.15);
+  color: #f87171;
+}
+
+.table-yellow th {
+  background-color: rgba(250, 204, 21, 0.15);
+  color: #facc15;
+}
+
+
+/* === TEXT COLOR UTILITIES === */
+.text-white { color: #ffffff !important; }
+.text-black { color: #000000 !important; }
+.text-gray { color: #cccccc !important; }
+.text-green { color: #4ade80 !important; }
+.text-blue { color: #61dafb !important; }
+.text-yellow { color: #facc15 !important; }
+.text-red { color: #f87171 !important; }
+.text-accent { color: var(--retro-accent) !important; }
+.text-retro { color: var(--retro-text) !important; }
+
+/* === BACKGROUND COLOR UTILITIES === */
+.bg-white { background-color: #ffffff !important; }
+.bg-black { background-color: #000000 !important; }
+.bg-gray { background-color: #1c1f26 !important; }
+.bg-green { background-color: #4ade80 !important; }
+.bg-blue { background-color: #61dafb !important; }
+.bg-yellow { background-color: #facc15 !important; }
+.bg-red { background-color: #f87171 !important; }
+
+/* === TEXT SIZE UTILITIES === */
+.text-xxs { font-size: 8px !important; }
+.text-xs { font-size: 10px !important; }
+.text-sm { font-size: 12px !important; }
+.text-base { font-size: 14px !important; }
+.text-lg { font-size: 16px !important; }
+.text-xl { font-size: 20px !important; }
+.text-2xl { font-size: 24px !important; }
+
+/* === TEXT EFFECTS === */
+.text-shadow { text-shadow: 2px 2px 0 var(--retro-shadow); }
+.text-glow { text-shadow: 0 0 6px var(--retro-accent); }
+
+/* === GRID COLOR === */
+.bg-grid-white { --grid-color: rgba(255, 255, 255, 0.1); }
+.bg-grid-black { --grid-color: rgba(0, 0, 0, 0.1); }
+.bg-grid-green { --grid-color: rgba(74, 222, 128, 0.15); } /* hijau */
+.bg-grid-blue { --grid-color: rgba(97, 218, 251, 0.15); }  /* biru */
+.bg-grid-yellow { --grid-color: rgba(250, 204, 21, 0.15); } /* kuning */
+.bg-grid-red { --grid-color: rgba(248, 113, 113, 0.15); }   /* merah */
+
+/* === BUTTON SIZE VARIANTS === */
+.btn-sm {
+  padding: 4px 8px;
+}
+
+.btn-md {
+  padding: 8px 16px;
+}
+
+.btn-lg {
+  padding: 12px 24px;
+}
+
+/* === CARD SIZE VARIANTS === */
+.card-sm {
+  padding: 8px;
+}
+
+.card-md {
+  padding: 16px;
+}
+
+.card-lg {
+  padding: 24px;
+}

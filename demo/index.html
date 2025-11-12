@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="retro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RetlanUI Demo</title>
+  <link href="output.css" rel="stylesheet">
+</head>
+<body class="flex flex-col items-center justify-center min-h-screen gap-6 transition-all duration-500">
+  <h1 class="pixel-font text-[var(--retro-accent)] text-xl">RETRO PIXEL UI</h1>
+
+  <button class="pixel-button" onclick="cycleTheme()">CHANGE THEME</button>
+
+  <div class="pixel-card w-72 text-center">
+    <p class="pixel-font text-xs">This is a RetlanUI Card</p>
+  </div>
+
+  <input class="pixel-input w-72" placeholder="Type here..." />
+
+  <div class="retro-card w-[400px]">
+    <h3 class="text-[var(--retro-accent)] pixel-font mb-2">HOBBIES & INTERESTS</h3>
+    <div class="grid grid-cols-2 gap-2 text-xs">
+      <div class="pixel-border p-2 bg-red-100">🎮 Gaming</div>
+      <div class="pixel-border p-2 bg-blue-100">🎨 Drawing</div>
+      <div class="pixel-border p-2 bg-yellow-100">🎵 Music</div>
+      <div class="pixel-border p-2 bg-green-100">📚 Reading</div>
+    </div>
+  </div>
+
+  <script>
+    const themes = ['retro', 'crt', 'terminal'];
+    let index = 0;
+    function cycleTheme() {
+      index = (index + 1) % themes.length;
+      document.documentElement.setAttribute('data-theme', themes[index]);
+    }
+  </script>
+</body>
+</html>
