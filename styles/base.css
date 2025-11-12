@@ -17,45 +17,21 @@
   box-sizing: border-box;
 }
 
+/* === RESPONSIVE CONTAINER === */
+.retro-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
 /* === COMPONENT CLASSES === */
 
-/* === INPUT === */
-.input {
-  border: 2px solid var(--retro-border);
-  background: transparent;
-  color: inherit;
-  padding: 8px 12px;
-  font-size: inherit;
-  font-family: inherit;
-  box-shadow: 2px 2px 0 var(--retro-shadow);
-  outline: none;
-  background-color: inherit;
-  width: 100%;
-}
-
-.input:focus {
-  border-color: var(--retro-accent);
-}
-
-.input::placeholder {
-  color: #aaa;
-}
-
-/* === LINK === */
-.link {
-  text-decoration: underline dotted;
-  color: var(--retro-accent);
-  transition: color 0.2s ease;
-  word-break: break-word;
-}
-
-.link:hover {
-  color: var(--retro-text);
-}
-
-/* Button */
+/* Button - Responsive */
 .btn {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   border: 2px solid var(--retro-border);
   box-shadow: 2px 2px 0 var(--retro-shadow);
   padding: 8px 16px;
@@ -64,6 +40,9 @@
   transition: all 0.1s ease;
   text-align: center;
   white-space: nowrap;
+  font-size: 12px;
+  line-height: 1.2;
+  min-height: 40px;
 }
 
 .btn:hover {
@@ -75,44 +54,56 @@
   transform: translate(2px, 2px);
 }
 
-/* Card */
+/* Card - Responsive */
 .card {
   border: 2px solid var(--retro-border);
   box-shadow: 4px 4px 0 var(--retro-shadow);
   padding: 16px;
   transition: transform 0.1s ease;
   font-family: 'Press Start 2P', monospace;
+  width: 100%;
+  overflow: hidden;
 }
 
 .card:hover {
   transform: translateY(-4px);
 }
 
-/* Input dengan CSS variables untuk Tailwind compatibility */
+/* Input - Responsive */
 .input {
-  border: 2px solid var(--retro-border, theme('colors.gray.300'));
-  box-shadow: 2px 2px 0 var(--retro-shadow, theme('colors.black'));
+  border: 2px solid var(--retro-border);
+  box-shadow: 2px 2px 0 var(--retro-shadow);
   padding: 8px 12px;
   font-family: 'Press Start 2P', monospace;
   outline: none;
-  /* Use CSS variables dengan fallback values */
-  background-color: var(--input-bg, transparent);
-  color: var(--input-color, inherit);
-  width: var(--input-width, auto);
-  font-size: var(--input-font-size, inherit);
+  width: 100%;
+  font-size: 14px;
+  min-height: 44px; /* Better touch targets on mobile */
 }
 
 .input:focus {
-  border-color: var(--retro-accent, theme('colors.blue.500'));
-  /* Allow Tailwind focus states */
-  --tw-ring-color: var(--retro-accent, theme('colors.blue.500'));
+  border-color: var(--retro-accent);
 }
 
 .input::placeholder {
-  color: var(--input-placeholder, #aaa);
+  color: #aaa;
+  font-size: 12px;
 }
 
-/* === MODAL === */
+/* Link */
+.link {
+  text-decoration: underline dotted;
+  color: var(--retro-accent);
+  transition: color 0.2s ease;
+  word-break: break-word;
+  font-size: 14px;
+}
+
+.link:hover {
+  color: var(--retro-text);
+}
+
+/* Modal - Responsive */
 .modal-backdrop {
   position: fixed;
   inset: 0;
@@ -122,25 +113,21 @@
   justify-content: center;
   z-index: 50;
   padding: 16px;
-  /* Use CSS variables */
-  background-color: var(--backdrop-bg, rgba(0, 0, 0, 0.7));
 }
 
 .modal {
-  background: var(--modal-bg, var(--retro-bg));
-  border: 2px solid var(--modal-border, var(--retro-border));
-  box-shadow: 4px 4px 0 var(--modal-shadow, var(--retro-shadow));
+  background: var(--retro-bg);
+  border: 2px solid var(--retro-border);
+  box-shadow: 4px 4px 0 var(--retro-shadow);
   padding: 24px;
   width: 100%;
   max-width: 400px;
   text-align: center;
-  color: var(--modal-color, var(--retro-text));
-  /* Use CSS variables */
-  background-color: var(--modal-bg, var(--retro-bg));
-  color: var(--modal-color, var(--retro-text));
+  color: var(--retro-text);
+  margin: 0 auto;
 }
 
-/* === BACKGROUND GRID === */
+/* Background Grid */
 .bg-grid {
   background-image:
     linear-gradient(to right, var(--grid-color) 2px, transparent 2px),
@@ -148,7 +135,7 @@
   background-size: 24px 24px;
 }
 
-/* Avatar */
+/* Avatar - Responsive */
 .avatar {
   position: relative;
   display: inline-flex;
@@ -163,15 +150,20 @@
   flex-shrink: 0;
 }
 
-/* Table */
+/* Table - Responsive */
 .table {
   border-collapse: collapse;
   box-shadow: 4px 4px 0 var(--retro-shadow);
   border: 2px solid var(--retro-border);
   font-family: 'Press Start 2P', monospace;
-  display: block;
+  width: 100%;
   overflow-x: auto;
-  white-space: nowrap;
+  display: block;
+}
+
+.table table {
+  width: 100%;
+  min-width: 600px; /* Minimum width for table content */
 }
 
 /* === UTILITY CLASSES === */
@@ -179,6 +171,8 @@
 /* Pixel Font Utility */
 .pixel-font {
   font-family: 'Press Start 2P' !important;
+  font-size: 12px;
+  line-height: 1.4;
 }
 
 /* Text Effects */
@@ -190,34 +184,194 @@
   text-shadow: 0 0 6px var(--retro-accent);
 }
 
-/* Size Variants*/
-.btn-sm { padding: 4px 8px; }
-.btn-md { padding: 8px 16px; }
-.btn-lg { padding: 12px 24px; }
+/* Size Variants - Responsive */
+.btn-sm { 
+  padding: 4px 8px; 
+  font-size: 10px;
+  min-height: 32px;
+}
+.btn-md { 
+  padding: 8px 16px; 
+  font-size: 12px;
+  min-height: 40px;
+}
+.btn-lg { 
+  padding: 12px 24px; 
+  font-size: 14px;
+  min-height: 48px;
+}
 
 .card-sm { padding: 8px; }
 .card-md { padding: 16px; }
 .card-lg { padding: 24px; }
 
-.avatar-sm { width: 32px; height: 32px; }
-.avatar-md { width: 64px; height: 64px; }
-.avatar-lg { width: 96px; height: 96px; }
-
-/* === RESPONSIVE MEDIA QUERIES === */
-@media (max-width: 768px) {
-  .btn-sm { padding: 3px 6px; }
-  .btn-md { padding: 6px 12px; }
-  .btn-lg { padding: 8px 16px; }
-  
-  .card-sm { padding: 6px; }
-  .card-md { padding: 12px; }
-  .card-lg { padding: 16px; }
+.avatar-sm { 
+  width: 32px; 
+  height: 32px; 
+  font-size: 8px;
+}
+.avatar-md { 
+  width: 64px; 
+  height: 64px; 
+  font-size: 10px;
+}
+.avatar-lg { 
+  width: 96px; 
+  height: 96px; 
+  font-size: 12px;
 }
 
-/* === GRID COLOR === */
+/* Grid Color */
 .bg-grid-white { --grid-color: rgba(255, 255, 255, 0.1); }
 .bg-grid-black { --grid-color: rgba(0, 0, 0, 0.1); }
 .bg-grid-green { --grid-color: rgba(74, 222, 128, 0.15); }
 .bg-grid-blue { --grid-color: rgba(97, 218, 251, 0.15); }
 .bg-grid-yellow { --grid-color: rgba(250, 204, 21, 0.15); }
 .bg-grid-red { --grid-color: rgba(248, 113, 113, 0.15); }
+
+/* === RESPONSIVE MEDIA QUERIES === */
+
+/* Mobile First Approach */
+
+/* Small devices (phones, 576px and down) */
+@media (max-width: 576px) {
+  .btn {
+    padding: 6px 12px;
+    font-size: 10px;
+    min-height: 36px;
+  }
+  
+  .card {
+    padding: 12px;
+  }
+  
+  .input {
+    padding: 6px 10px;
+    font-size: 12px;
+    min-height: 40px;
+  }
+  
+  .modal {
+    padding: 16px;
+    margin: 8px;
+  }
+  
+  .pixel-font {
+    font-size: 10px;
+  }
+  
+  .btn-sm { 
+    padding: 3px 6px; 
+    font-size: 8px;
+    min-height: 28px;
+  }
+  .btn-md { 
+    padding: 6px 12px; 
+    font-size: 10px;
+    min-height: 36px;
+  }
+  .btn-lg { 
+    padding: 8px 16px; 
+    font-size: 12px;
+    min-height: 42px;
+  }
+  
+  .card-sm { padding: 6px; }
+  .card-md { padding: 12px; }
+  .card-lg { padding: 16px; }
+  
+  .avatar-sm { 
+    width: 24px; 
+    height: 24px; 
+    font-size: 6px;
+  }
+  .avatar-md { 
+    width: 48px; 
+    height: 48px; 
+    font-size: 8px;
+  }
+  .avatar-lg { 
+    width: 72px; 
+    height: 72px; 
+    font-size: 10px;
+  }
+}
+
+/* Medium devices (tablets, 768px and down) */
+@media (max-width: 768px) {
+  .retro-container {
+    padding: 0 12px;
+  }
+  
+  .btn {
+    padding: 7px 14px;
+    font-size: 11px;
+  }
+  
+  .card {
+    padding: 14px;
+  }
+  
+  .modal {
+    padding: 20px;
+    margin: 12px;
+  }
+  
+  .table {
+    font-size: 10px;
+  }
+}
+
+/* Large devices (desktops, 992px and down) */
+@media (max-width: 992px) {
+  .retro-container {
+    padding: 0 14px;
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and down) */
+@media (max-width: 1200px) {
+  .retro-container {
+    padding: 0 16px;
+  }
+}
+
+/* Touch device improvements */
+@media (hover: none) and (pointer: coarse) {
+  .btn:hover {
+    filter: none;
+  }
+  
+  .card:hover {
+    transform: none;
+  }
+  
+  .avatar:hover {
+    transform: none;
+    filter: none;
+  }
+  
+  /* Increase touch targets */
+  .btn {
+    min-height: 44px;
+  }
+  
+  .input {
+    min-height: 44px;
+  }
+}
+
+/* Print styles */
+@media print {
+  .btn, .card, .modal-backdrop {
+    box-shadow: none !important;
+  }
+  
+  .btn:active {
+    transform: none !important;
+  }
+  
+  .card:hover {
+    transform: none !important;
+  }
+}
