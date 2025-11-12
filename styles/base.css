@@ -412,6 +412,133 @@ body {
   color: #facc15;
 }
 
+/* === RETRO HEADER === */
+.retro-header {
+  background: var(--retro-bg);
+  color: var(--retro-text);
+  border-bottom: 2px solid var(--retro-border);
+  box-shadow: 4px 4px 0 var(--retro-shadow);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  font-family: 'Press Start 2P', monospace;
+  text-transform: uppercase;
+}
+
+/* === HEADER CONTAINER === */
+.retro-header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* === LOGO AREA === */
+.retro-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.retro-logo-icon {
+  width: 32px;
+  height: 32px;
+  background: var(--retro-accent);
+  border: 2px solid var(--retro-border);
+  box-shadow: 2px 2px 0 var(--retro-shadow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.retro-logo-text {
+  font-size: 12px;
+  color: var(--retro-text);
+}
+
+/* === NAVIGATION === */
+.retro-nav {
+  display: flex;
+  gap: 12px;
+}
+
+.retro-nav button {
+  border: 2px solid var(--retro-border);
+  background: var(--retro-bg);
+  color: var(--retro-text);
+  box-shadow: 2px 2px 0 var(--retro-shadow);
+  padding: 6px 10px;
+  font-size: 10px;
+  cursor: pointer;
+  transition: all 0.1s ease;
+}
+
+.retro-nav button:hover {
+  filter: brightness(1.1);
+}
+
+.retro-nav button.active {
+  background: var(--retro-accent);
+  color: #fff;
+}
+
+/* === MOBILE MENU BUTTON === */
+.retro-menu-btn {
+  display: none;
+  width: 36px;
+  height: 36px;
+  border: 2px solid var(--retro-border);
+  background: var(--retro-bg);
+  box-shadow: 2px 2px 0 var(--retro-shadow);
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.retro-menu-btn:hover {
+  filter: brightness(1.1);
+}
+
+/* === MOBILE DROPDOWN === */
+.retro-nav-mobile {
+  display: none;
+  flex-direction: column;
+  border-top: 2px solid var(--retro-border);
+  background: var(--retro-bg);
+  box-shadow: 0 4px 0 var(--retro-shadow);
+}
+
+.retro-nav-mobile button {
+  border: none;
+  border-bottom: 2px solid var(--retro-border);
+  padding: 10px;
+  text-align: left;
+  background: var(--retro-bg);
+  color: var(--retro-text);
+  font-size: 10px;
+}
+
+.retro-nav-mobile button:hover {
+  background: rgba(97, 218, 251, 0.15);
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .retro-nav {
+    display: none;
+  }
+
+  .retro-menu-btn {
+    display: flex;
+  }
+
+  .retro-nav-mobile.open {
+    display: flex;
+  }
+}
+
 
 /* === TEXT COLOR UTILITIES === */
 .text-white { color: #ffffff !important; }
