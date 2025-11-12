@@ -17,9 +17,9 @@
   box-sizing: border-box;
 }
 
-/* === COMPONENT CLASSES (bisa digabung dengan Tailwind) === */
+/* === COMPONENT CLASSES === */
 
-/* Button dengan compatibility */
+/* Button */
 .btn {
   display: inline-block;
   border: 2px solid var(--retro-border);
@@ -30,8 +30,6 @@
   transition: all 0.1s ease;
   text-align: center;
   white-space: nowrap;
-  
-  /* Reset agar bisa di-override Tailwind */
   background-color: initial;
   color: initial;
   font-size: initial;
@@ -46,15 +44,13 @@
   transform: translate(2px, 2px);
 }
 
-/* Card dengan compatibility */
+/* Card */
 .card {
   border: 2px solid var(--retro-border);
   box-shadow: 4px 4px 0 var(--retro-shadow);
   padding: 16px;
   transition: transform 0.1s ease;
   font-family: 'Press Start 2P', monospace;
-  
-  /* Reset agar bisa di-override Tailwind */
   background-color: initial;
   color: initial;
   width: initial;
@@ -64,15 +60,13 @@
   transform: translateY(-4px);
 }
 
-/* Input dengan compatibility */
+/* Input */
 .input {
   border: 2px solid var(--retro-border);
   box-shadow: 2px 2px 0 var(--retro-shadow);
   padding: 8px 12px;
   font-family: 'Press Start 2P', monospace;
   outline: none;
-  
-  /* Reset agar bisa di-override Tailwind */
   background-color: initial;
   color: initial;
   width: initial;
@@ -121,7 +115,7 @@
   white-space: nowrap;
 }
 
-/* === UTILITY CLASSES (bisa digabung dengan Tailwind) === */
+/* === UTILITY CLASSES === */
 
 /* Pixel Font Utility */
 .pixel-font {
@@ -137,7 +131,7 @@
   text-shadow: 0 0 6px var(--retro-accent);
 }
 
-/* Size Variants - bisa di-override Tailwind */
+/* Size Variants*/
 .btn-sm { padding: 4px 8px; }
 .btn-md { padding: 8px 16px; }
 .btn-lg { padding: 12px 24px; }
