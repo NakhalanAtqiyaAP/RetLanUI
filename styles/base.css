@@ -41,6 +41,7 @@ body {
   background: inherit;
   cursor: pointer;
   transition: all 0.1s ease;
+  background-color:inherit var(--bg-color) ;
 }
 
 .btn:hover {
@@ -58,9 +59,10 @@ body {
   box-shadow: 4px 4px 0 var(--retro-shadow);
   padding: 16px;
   transition: transform 0.1s ease;
-  background: inherit var(--bg-color);
+  background: inherit;
   color: inherit;
   font-family: inherit;
+  background-color:inherit var(--bg-color) ;
 }
 
 .card:hover {
@@ -77,6 +79,7 @@ body {
   font-family: inherit;
   box-shadow: 2px 2px 0 var(--retro-shadow);
   outline: none;
+  background-color:inherit var(--bg-color) ;
 }
 
 .input:focus {
@@ -97,8 +100,6 @@ body {
 .link:hover {
   color: var(--retro-text);
 }
-
-
 
 /* === MODAL === */
 .modal-backdrop {
