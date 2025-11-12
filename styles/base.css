@@ -88,22 +88,28 @@
   transform: translateY(-4px);
 }
 
-/* Input */
+/* Input dengan CSS variables untuk Tailwind compatibility */
 .input {
-  border: 2px solid var(--retro-border);
-  box-shadow: 2px 2px 0 var(--retro-shadow);
+  border: 2px solid var(--retro-border, theme('colors.gray.300'));
+  box-shadow: 2px 2px 0 var(--retro-shadow, theme('colors.black'));
   padding: 8px 12px;
   font-family: 'Press Start 2P', monospace;
   outline: none;
-
+  /* Use CSS variables dengan fallback values */
+  background-color: var(--input-bg, transparent);
+  color: var(--input-color, inherit);
+  width: var(--input-width, auto);
+  font-size: var(--input-font-size, inherit);
 }
 
 .input:focus {
-  border-color: var(--retro-accent);
+  border-color: var(--retro-accent, theme('colors.blue.500'));
+  /* Allow Tailwind focus states */
+  --tw-ring-color: var(--retro-accent, theme('colors.blue.500'));
 }
 
 .input::placeholder {
-  color: #aaa;
+  color: var(--input-placeholder, #aaa);
 }
 
 /* === MODAL === */
@@ -116,17 +122,22 @@
   justify-content: center;
   z-index: 50;
   padding: 16px;
+  /* Use CSS variables */
+  background-color: var(--backdrop-bg, rgba(0, 0, 0, 0.7));
 }
 
 .modal {
-  background: var(--retro-bg);
-  border: 2px solid var(--retro-border);
-  box-shadow: 4px 4px 0 var(--retro-shadow);
+  background: var(--modal-bg, var(--retro-bg));
+  border: 2px solid var(--modal-border, var(--retro-border));
+  box-shadow: 4px 4px 0 var(--modal-shadow, var(--retro-shadow));
   padding: 24px;
   width: 100%;
   max-width: 400px;
   text-align: center;
-  color: var(--retro-text);
+  color: var(--modal-color, var(--retro-text));
+  /* Use CSS variables */
+  background-color: var(--modal-bg, var(--retro-bg));
+  color: var(--modal-color, var(--retro-text));
 }
 
 /* === BACKGROUND GRID === */
