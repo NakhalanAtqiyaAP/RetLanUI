@@ -166,6 +166,49 @@
   min-width: 600px; /* Minimum width for table content */
 }
 
+/* === RETRO HEADER === */
+.ret-header {
+  width: 100%;
+  padding: 16px 20px;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 14px;
+  color: var(--retro-text);
+  background: var(--retro-bg);
+  border-bottom: 4px solid var(--retro-border);
+  box-shadow: 0 4px 0 var(--retro-shadow);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Title / Logo */
+.ret-header-title {
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 0 var(--retro-shadow);
+}
+
+/* Header Items / Actions */
+.ret-header-actions {
+  display: flex;
+  gap: 12px;
+}
+
+/* Responsive Header */
+@media (max-width: 576px) {
+  .retro-header {
+    padding: 12px 16px;
+    font-size: 10px;
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+
+  .retro-header-title {
+    font-size: 10px;
+  }
+}
+
 /* === UTILITY CLASSES === */
 
 /* Pixel Font Utility */
