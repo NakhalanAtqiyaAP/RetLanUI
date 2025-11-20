@@ -27,15 +27,13 @@
 
 /* === COMPONENT CLASSES === */
 
-/* Button - Responsive */
+/* Button*/
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   border: 2px solid black;
   box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
-  padding: 8px 16px;
-  font-family: 'Press Start 2P', monospace;
   cursor: pointer;
   transition: all 0.2s ease;
   text-align: center;
@@ -55,13 +53,11 @@
   box-shadow: 2px 2px 0px 0px rgba(0,0,0,1);
 }
 
-/* Card - Responsive */
+/* Card*/
 .card {
   border: 2px solid black;
   box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
-  padding: 16px;
   transition: all 0.2s ease;
-  font-family: 'Press Start 2P', monospace;
   width: 100%;
   overflow: hidden;
 }
@@ -71,12 +67,10 @@
   box-shadow: 6px 6px 0px 0px rgba(0,0,0,1);
 }
 
-/* Input - Responsive */
+/* Input*/
 .input {
   border: 2px solid black;
   box-shadow: 2px 2px 0px 0px rgba(0,0,0,1);
-  padding: 8px 12px;
-  font-family: 'Press Start 2P', monospace;
   outline: none;
   width: 100%;
   font-size: 14px;
@@ -107,7 +101,7 @@
   color: var(--retro-text);
 }
 
-/* Modal - Responsive */
+/* Modal*/
 .modal-backdrop {
   position: fixed;
   inset: 0;
@@ -139,7 +133,7 @@
   background-size: 24px 24px;
 }
 
-/* Avatar - Responsive */
+/* Avatar*/
 .avatar {
   position: relative;
   display: inline-flex;
@@ -159,7 +153,7 @@
   box-shadow: 5px 5px 0px 0px rgba(0,0,0,1);
 }
 
-/* Table - Responsive */
+/* Table*/
 .table {
   border-collapse: collapse;
   box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
@@ -409,7 +403,6 @@
 /* Pixel Font Utility */
 .pixel-font {
   font-family: 'Press Start 2P' !important;
-  font-size: 12px;
   line-height: 1.4;
 }
 
@@ -422,7 +415,7 @@
   text-shadow: 0 0 6px var(--retro-accent);
 }
 
-/* Size Variants - Responsive */
+/* Size Variants*/
 .btn-sm { 
   padding: 4px 8px; 
   font-size: 10px;
